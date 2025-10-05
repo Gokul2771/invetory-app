@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ action }} Movement</h2>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.movement_id.label }} {{ form.movement_id(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.product.label }} {{ form.product(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.from_location.label }} {{ form.from_location(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.to_location.label }} {{ form.to_location(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.qty.label }} {{ form.qty(class="form-control") }}
+  </div>
+  {{ form.submit(class="btn btn-primary") }}
+  <a class="btn btn-secondary" href="{{ url_for('bp.movements') }}">Cancel</a>
+</form>
+{% endblock %}

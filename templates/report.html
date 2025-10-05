@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Balance Report</h2>
+<p>Grid view — Product | Warehouse | Qty</p>
+<table class="table table-bordered">
+  <thead><tr><th>Product</th><th>Warehouse</th><th>Qty</th></tr></thead>
+  <tbody>
+    {% for r in rows %}
+      <tr>
+        <td>{{ r.product.product_id }} - {{ r.product.name }}</td>
+        <td>{{ r.location.location_id }} - {{ r.location.name }}</td>
+        <td>{{ r.qty }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
